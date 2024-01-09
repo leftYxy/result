@@ -6,7 +6,7 @@
 declare(strict_types=1);
 
 
-namespace Yaoxy\Result;
+namespace Yaoxy;
 
 
 class Result
@@ -35,7 +35,7 @@ class Result
 	 * @param int $code
 	 * @return array
 	 */
-	public static function error(string $msg = 'fail', int $code = ErrorCode::ERROR): array
+	public static function error(string $msg = '', int $code = ErrorCode::ERROR): array
 	{
 		return [
 			'code' => $code,
