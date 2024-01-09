@@ -23,7 +23,7 @@ class Result
 	{
 		return [
 			'code' => $code,
-			'msg' => !empty($msg) ? $msg : ErrorCode::getMessage(ErrorCode::$code),
+			'msg' => !empty($msg) ? $msg : ErrorCode::getMessage($code),
 			'data' => $data,
 		];
 	}
@@ -39,7 +39,7 @@ class Result
 	{
 		return [
 			'code' => $code,
-			'msg' => !empty($msg) ? $msg : ErrorCode::getMessage(ErrorCode::$code),
+			'msg' => !empty($msg) ? $msg : ErrorCode::getMessage($code),
 		];
 	}
 }
