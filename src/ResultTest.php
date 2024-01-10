@@ -9,16 +9,17 @@ declare(strict_types=1);
 namespace Yaoxy\Result;
 
 
-class ResultTest
-{
-	public function success()
-	{
-		$data = ['data' => 'data'];
-		return Result::success($data);
-	}
+use PHPUnit\Framework\TestCase;
 
-	public function fail()
-	{
-		return Result::error('fail');
-	}
+class ResultTest extends TestCase
+{
+    public function testSuccess()
+    {
+        $this->assertEquals(200, Result::success(['data' => 'data'])['code']);
+    }
+
+    public function testFail()
+    {
+        $this->assertEquals(0, Result::error('fail')['code']);
+    }
 }
